@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import SVProgressHUD
+import SVProgressHUD
 
 extension UIViewController {
     
@@ -22,21 +22,21 @@ extension UIViewController {
         return fullName
     }
     
-//    func showHUD() {
-//        DispatchQueue.main.async {
-//            self.view.isUserInteractionEnabled = false
-//            if !SVProgressHUD.isVisible() {
-//                SVProgressHUD.show()
-//            }
-//        }
-//    }
-//    
-//    func hideHUD() {
-//        DispatchQueue.main.async {
-//            self.view.isUserInteractionEnabled = true
-//            SVProgressHUD.dismiss()
-//        }
-//    }
+    func showHUD() {
+        DispatchQueue.main.async {
+            self.view.isUserInteractionEnabled = false
+            if !SVProgressHUD.isVisible() {
+                SVProgressHUD.show()
+            }
+        }
+    }
+    
+    func hideHUD() {
+        DispatchQueue.main.async {
+            self.view.isUserInteractionEnabled = true
+            SVProgressHUD.dismiss()
+        }
+    }
 }
 
 extension UIViewController {
