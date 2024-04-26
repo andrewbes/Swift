@@ -18,6 +18,9 @@
 		B5055D212BDBF50400FCA117 /* SplashScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D1D2BDBF50400FCA117 /* SplashScreenVC.swift */; };
 		B5055D252BDBF68C00FCA117 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D242BDBF68C00FCA117 /* Storyboard.swift */; };
 		B5055D292BDC316A00FCA117 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D282BDC316A00FCA117 /* UIViewController.swift */; };
+		B5055D2D2BDC3F3600FCA117 /* ConfigurableVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D2C2BDC3F3600FCA117 /* ConfigurableVCProtocol.swift */; };
+		B5055D2F2BDC410B00FCA117 /* TDLStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D2E2BDC410B00FCA117 /* TDLStackViewController.swift */; };
+		B5055D312BDC46B600FCA117 /* TDLShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D302BDC46B600FCA117 /* TDLShadowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		B5055D1D2BDBF50400FCA117 /* SplashScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenVC.swift; sourceTree = "<group>"; };
 		B5055D242BDBF68C00FCA117 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		B5055D282BDC316A00FCA117 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		B5055D2C2BDC3F3600FCA117 /* ConfigurableVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableVCProtocol.swift; sourceTree = "<group>"; };
+		B5055D2E2BDC410B00FCA117 /* TDLStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDLStackViewController.swift; sourceTree = "<group>"; };
+		B5055D302BDC46B600FCA117 /* TDLShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDLShadowView.swift; sourceTree = "<group>"; };
 		FA2CFF215658A7F397A79AF0 /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +99,6 @@
 				B5055D152BDBEC8700FCA117 /* Network */,
 				B5055D142BDBEC6B00FCA117 /* Services */,
 				B5055D132BDBEC6300FCA117 /* Screens */,
-				B5055D232BDBF66A00FCA117 /* Extentions */,
 				B5055D0D2BDBEA0500FCA117 /* Info.plist */,
 			);
 			path = ToDoList;
@@ -102,6 +107,7 @@
 		B5055D132BDBEC6300FCA117 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B5055D2A2BDC3DAF00FCA117 /* TODOListScreen */,
 				B5055D222BDBF5F300FCA117 /* SplashScreenWithStoryboard */,
 			);
 			path = Screens;
@@ -131,6 +137,8 @@
 		B5055D172BDBECBC00FCA117 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B5055D232BDBF66A00FCA117 /* Extentions */,
+				B5055D2B2BDC3E7C00FCA117 /* UIComponents */,
 				B5055CFF2BDBE9FF00FCA117 /* AppDelegate.swift */,
 				B5055D012BDBE9FF00FCA117 /* SceneDelegate.swift */,
 				B5055D082BDBEA0500FCA117 /* Assets.xcassets */,
@@ -157,6 +165,23 @@
 				B5055D242BDBF68C00FCA117 /* Storyboard.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		B5055D2A2BDC3DAF00FCA117 /* TODOListScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TODOListScreen;
+			sourceTree = "<group>";
+		};
+		B5055D2B2BDC3E7C00FCA117 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				B5055D2C2BDC3F3600FCA117 /* ConfigurableVCProtocol.swift */,
+				B5055D2E2BDC410B00FCA117 /* TDLStackViewController.swift */,
+				B5055D302BDC46B600FCA117 /* TDLShadowView.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +298,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5055D312BDC46B600FCA117 /* TDLShadowView.swift in Sources */,
+				B5055D2F2BDC410B00FCA117 /* TDLStackViewController.swift in Sources */,
 				B5055D192BDBED1E00FCA117 /* AppCoordinator.swift in Sources */,
+				B5055D2D2BDC3F3600FCA117 /* ConfigurableVCProtocol.swift in Sources */,
 				B5055D002BDBE9FF00FCA117 /* AppDelegate.swift in Sources */,
 				B5055D1F2BDBF50400FCA117 /* SplashScreenVM.swift in Sources */,
 				B5055D252BDBF68C00FCA117 /* Storyboard.swift in Sources */,
