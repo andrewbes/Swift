@@ -18,26 +18,27 @@ class TODOListScreenCoord: TODOListScreenCoordType {
     weak var rootVC: UIViewController?
     private weak var navController: UINavigationController?
     
-    weak var viewController = Storyboard._storyboard_name_.controller(withClass: TODOListScreenVC.self)
+    weak var viewController = Storyboard.toDoListScreen.controller(withClass: TODOListScreenVC.self)
     private weak var transitions: TODOListScreenCoordTransitions?
     
     init(navController: UINavigationController?,
          transitions: TODOListScreenCoordTransitions?) {
         self.navController = navController
         self.transitions = transitions
-        viewController?.viewModel = TODOListScreenVM(self)
+        viewController?.configureWith(model: TODOListScreenVM(self))
     }
     
     init(withRootVC rootVC: UIViewController?,
          transitions: TODOListScreenCoordTransitions?) {
         self.rootVC = rootVC
         self.transitions = transitions
-        viewController?.viewModel = TODOListScreenVM(self)
+        viewController?.configureWith(model: TODOListScreenVM(self))
     }
 
     func start() {
-        guard let vc = viewController else { return }
-        navController?.pushViewController(vc, animated: true)
+        if let viewController {
+            navController?.setViewControllers([viewController], animated: false)
+        }
     }
     
     func back() {

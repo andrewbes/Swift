@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TODOListScreenVMType {
+protocol TODOListScreenVMType: ViewModelProtocol {
     
 }
 

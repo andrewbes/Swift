@@ -10,6 +10,7 @@ import UIKit
 
 struct Storyboard {
     static let splashScreen = UIStoryboard(name: "SplashScreen", bundle: nil)
+    static let toDoListScreen  = UIStoryboard(name: "TODOListScreen", bundle: nil)
 }
 
 protocol StoryboardIdentifiable {
