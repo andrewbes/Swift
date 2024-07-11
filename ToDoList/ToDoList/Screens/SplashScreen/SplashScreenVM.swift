@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SplashScreenVMType {
-    
+    func showToDoListScreen()
 }
 
 class SplashScreenVM: SplashScreenVMType {
@@ -21,5 +21,9 @@ class SplashScreenVM: SplashScreenVMType {
     
     deinit {
         print("SplashScreenVM - deinit")
+    }
+    
+    func showToDoListScreen() {
+        coordinator.showToDoListScreen()
     }
 }

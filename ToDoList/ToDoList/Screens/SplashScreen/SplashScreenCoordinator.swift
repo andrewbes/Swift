@@ -8,13 +8,15 @@
 import UIKit
 
 protocol SplashScreenCoordTransitions: AnyObject {
+    func showToDoListScreen()
 }
 
 protocol SplashScreenCoordinatorProtocol {
+    func showToDoListScreen()
 }
 
 class SplashScreenCoordinator: SplashScreenCoordinatorProtocol {
-    
+
     weak var rootVC: UIViewController?
     private weak var navigationController: UINavigationController?
     
@@ -46,5 +48,9 @@ class SplashScreenCoordinator: SplashScreenCoordinatorProtocol {
     
     deinit {
         print("SplashScreenCoord - deinit")
+    }
+    
+    func showToDoListScreen() {
+        transitions?.showToDoListScreen()
     }
 }

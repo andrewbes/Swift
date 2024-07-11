@@ -19,8 +19,13 @@
 		B5055D252BDBF68C00FCA117 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D242BDBF68C00FCA117 /* Storyboard.swift */; };
 		B5055D292BDC316A00FCA117 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D282BDC316A00FCA117 /* UIViewController.swift */; };
 		B5055D2D2BDC3F3600FCA117 /* ConfigurableVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D2C2BDC3F3600FCA117 /* ConfigurableVCProtocol.swift */; };
-		B5055D2F2BDC410B00FCA117 /* TDLStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D2E2BDC410B00FCA117 /* TDLStackViewController.swift */; };
-		B5055D312BDC46B600FCA117 /* TDLShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D302BDC46B600FCA117 /* TDLShadowView.swift */; };
+		B5055D682BFBE2FB00FCA117 /* TODOListScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D642BFBE2FB00FCA117 /* TODOListScreenVM.swift */; };
+		B5055D692BFBE2FB00FCA117 /* TODOListScreenCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D652BFBE2FB00FCA117 /* TODOListScreenCoord.swift */; };
+		B5055D6A2BFBE2FB00FCA117 /* TODOListScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D662BFBE2FB00FCA117 /* TODOListScreenVC.swift */; };
+		B5055D6C2BFBE3DA00FCA117 /* ModelConfigurableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D6B2BFBE3DA00FCA117 /* ModelConfigurableProtocol.swift */; };
+		B5055D6E2BFBE40600FCA117 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5055D6D2BFBE40600FCA117 /* ViewModelProtocol.swift */; };
+		B512483A2C3F15DD008DC567 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51248392C3F15DD008DC567 /* UIView.swift */; };
+		B512483C2C3F2089008DC567 /* TODOListScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B512483B2C3F1E65008DC567 /* TODOListScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +44,13 @@
 		B5055D242BDBF68C00FCA117 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		B5055D282BDC316A00FCA117 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		B5055D2C2BDC3F3600FCA117 /* ConfigurableVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableVCProtocol.swift; sourceTree = "<group>"; };
-		B5055D2E2BDC410B00FCA117 /* TDLStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDLStackViewController.swift; sourceTree = "<group>"; };
-		B5055D302BDC46B600FCA117 /* TDLShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDLShadowView.swift; sourceTree = "<group>"; };
+		B5055D642BFBE2FB00FCA117 /* TODOListScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOListScreenVM.swift; sourceTree = "<group>"; };
+		B5055D652BFBE2FB00FCA117 /* TODOListScreenCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOListScreenCoord.swift; sourceTree = "<group>"; };
+		B5055D662BFBE2FB00FCA117 /* TODOListScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOListScreenVC.swift; sourceTree = "<group>"; };
+		B5055D6B2BFBE3DA00FCA117 /* ModelConfigurableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConfigurableProtocol.swift; sourceTree = "<group>"; };
+		B5055D6D2BFBE40600FCA117 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		B51248392C3F15DD008DC567 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		B512483B2C3F1E65008DC567 /* TODOListScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TODOListScreen.storyboard; sourceTree = "<group>"; };
 		FA2CFF215658A7F397A79AF0 /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				B5055D2A2BDC3DAF00FCA117 /* TODOListScreen */,
-				B5055D222BDBF5F300FCA117 /* SplashScreenWithStoryboard */,
+				B5055D222BDBF5F300FCA117 /* SplashScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -130,6 +140,7 @@
 		B5055D162BDBEC9600FCA117 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B5055D6D2BFBE40600FCA117 /* ViewModelProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,8 +148,8 @@
 		B5055D172BDBECBC00FCA117 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B512483D2C3FEF91008DC567 /* Protocols */,
 				B5055D232BDBF66A00FCA117 /* Extentions */,
-				B5055D2B2BDC3E7C00FCA117 /* UIComponents */,
 				B5055CFF2BDBE9FF00FCA117 /* AppDelegate.swift */,
 				B5055D012BDBE9FF00FCA117 /* SceneDelegate.swift */,
 				B5055D082BDBEA0500FCA117 /* Assets.xcassets */,
@@ -147,7 +158,7 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		B5055D222BDBF5F300FCA117 /* SplashScreenWithStoryboard */ = {
+		B5055D222BDBF5F300FCA117 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
 				B5055D1A2BDBF50400FCA117 /* SplashScreen.storyboard */,
@@ -155,7 +166,7 @@
 				B5055D1C2BDBF50400FCA117 /* SplashScreenCoordinator.swift */,
 				B5055D1D2BDBF50400FCA117 /* SplashScreenVC.swift */,
 			);
-			path = SplashScreenWithStoryboard;
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 		B5055D232BDBF66A00FCA117 /* Extentions */ = {
@@ -163,6 +174,7 @@
 			children = (
 				B5055D282BDC316A00FCA117 /* UIViewController.swift */,
 				B5055D242BDBF68C00FCA117 /* Storyboard.swift */,
+				B51248392C3F15DD008DC567 /* UIView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -170,18 +182,21 @@
 		B5055D2A2BDC3DAF00FCA117 /* TODOListScreen */ = {
 			isa = PBXGroup;
 			children = (
+				B512483B2C3F1E65008DC567 /* TODOListScreen.storyboard */,
+				B5055D642BFBE2FB00FCA117 /* TODOListScreenVM.swift */,
+				B5055D652BFBE2FB00FCA117 /* TODOListScreenCoord.swift */,
+				B5055D662BFBE2FB00FCA117 /* TODOListScreenVC.swift */,
 			);
 			path = TODOListScreen;
 			sourceTree = "<group>";
 		};
-		B5055D2B2BDC3E7C00FCA117 /* UIComponents */ = {
+		B512483D2C3FEF91008DC567 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				B5055D6B2BFBE3DA00FCA117 /* ModelConfigurableProtocol.swift */,
 				B5055D2C2BDC3F3600FCA117 /* ConfigurableVCProtocol.swift */,
-				B5055D2E2BDC410B00FCA117 /* TDLStackViewController.swift */,
-				B5055D302BDC46B600FCA117 /* TDLShadowView.swift */,
 			);
-			path = UIComponents;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5055D092BDBEA0500FCA117 /* Assets.xcassets in Resources */,
+				B512483C2C3F2089008DC567 /* TODOListScreen.storyboard in Resources */,
 				B5055D1E2BDBF50400FCA117 /* SplashScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,8 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5055D312BDC46B600FCA117 /* TDLShadowView.swift in Sources */,
-				B5055D2F2BDC410B00FCA117 /* TDLStackViewController.swift in Sources */,
+				B5055D6E2BFBE40600FCA117 /* ViewModelProtocol.swift in Sources */,
 				B5055D192BDBED1E00FCA117 /* AppCoordinator.swift in Sources */,
 				B5055D2D2BDC3F3600FCA117 /* ConfigurableVCProtocol.swift in Sources */,
 				B5055D002BDBE9FF00FCA117 /* AppDelegate.swift in Sources */,
@@ -309,6 +324,11 @@
 				B5055D212BDBF50400FCA117 /* SplashScreenVC.swift in Sources */,
 				B5055D292BDC316A00FCA117 /* UIViewController.swift in Sources */,
 				B5055D022BDBE9FF00FCA117 /* SceneDelegate.swift in Sources */,
+				B5055D682BFBE2FB00FCA117 /* TODOListScreenVM.swift in Sources */,
+				B5055D6C2BFBE3DA00FCA117 /* ModelConfigurableProtocol.swift in Sources */,
+				B5055D692BFBE2FB00FCA117 /* TODOListScreenCoord.swift in Sources */,
+				B512483A2C3F15DD008DC567 /* UIView.swift in Sources */,
+				B5055D6A2BFBE2FB00FCA117 /* TODOListScreenVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

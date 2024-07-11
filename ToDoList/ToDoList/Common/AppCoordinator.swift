@@ -10,7 +10,8 @@ import UIKit
 
 class AppCoordinator {
     private weak var window: UIWindow?
-    
+   // private var toDoListCoordinator:TODOListScreenCoord?
+ 
     init(window: UIWindow?) {
         self.window = window
         print("\(String(describing: self)) - \(#function)")
@@ -53,18 +54,20 @@ extension AppCoordinator {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
-    
-    private func showToDoListScreen() {
-//        let coordinator = ToDoListScreenCoordinator(navigationController: navigationController, transitions: self)
-//        coordinator.start()
-    }
 
     private func showSplashScreen() {
-       let coordinator = SplashScreenCoordinator(navigationController: navigationController, transitions: self)
-        coordinator.start()
+        let splashScreenCoord = SplashScreenCoordinator(navigationController: navigationController, transitions: self)
+        splashScreenCoord.start()
     }
 }
 
 extension AppCoordinator : SplashScreenCoordTransitions {
+    func showToDoListScreen() {
+        let toDoListCoordinator = TODOListScreenCoord(navController: navigationController, transitions: self)
+            toDoListCoordinator.start()
+    }
+}
+
+extension AppCoordinator: TODOListScreenCoordTransitions {
     
 }
