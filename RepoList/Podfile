@@ -1,0 +1,14 @@
+use_frameworks!
+inhibit_all_warnings!
+
+def pods
+  pod 'Alamofire'
+  pod 'SVProgressHUD'
+  pod 'Kingfisher'
+  pod 'SwiftKeychainWrapper'
+end
+
+target 'RepoList' do
+  platform :ios, '17.0'
+  pods
+end

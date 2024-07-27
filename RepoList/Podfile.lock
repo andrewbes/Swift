@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (5.9.1)
+  - Kingfisher (7.11.0)
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
+  - SwiftKeychainWrapper (4.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - Kingfisher
+  - SVProgressHUD
+  - SwiftKeychainWrapper
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - SVProgressHUD
+    - SwiftKeychainWrapper
+
+SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
+
+PODFILE CHECKSUM: 10937b13d0559b494672e594af3a807b57bbc1aa
+
+COCOAPODS: 1.15.2
