@@ -26,8 +26,8 @@ class FetchFileContentRequest: RequestProtocol {
     }
     
     func fullApiPath() -> String {
-        print("https://api.github.com/repos/\(username)/\(repo)/contents/\(path)")
-        return "https://api.github.com/repos/\(username)/\(repo)/contents/\(path)"
+        print("\(Defines.serverURL)repos/\(username)/\(repo)/contents/\(path)")
+        return "\(Defines.serverURL)repos/\(username)/\(repo)/contents/\(path)"
     }
     
     func requiresAuth() -> Bool? {

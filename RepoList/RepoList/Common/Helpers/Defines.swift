@@ -7,14 +7,10 @@
 
 import Foundation
 
-//MARK::typealiases
-typealias EmptyClosure = () -> ()
-typealias SimpleClosure<T> = (T) -> ()
-
 //MARK::defines
 struct Defines {
     
-    static let serverURL = ""
+    static let serverURL = "https://api.github.com/"
     
 }
 

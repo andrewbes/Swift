@@ -22,8 +22,8 @@ class FetchRepositoriesRequest: RequestProtocol {
     }
     
     func fullApiPath() -> String {
-        print("https://api.github.com/search/repositories?q=user:\(username)")
-        return "https://api.github.com/search/repositories?q=user:\(username)"
+        print("\(Defines.serverURL)search/repositories?q=user:\(username)")
+        return "\(Defines.serverURL)search/repositories?q=user:\(username)"
     }
     
     func requiresAuth() -> Bool? {

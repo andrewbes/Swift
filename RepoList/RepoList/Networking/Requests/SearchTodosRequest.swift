@@ -26,8 +26,8 @@ class SearchTodosRequest: RequestProtocol {
     
     func fullApiPath() -> String {
         let query = "repo:\(username)/\(repo)"
-        print("https://api.github.com/search/code?q=TODO \(query)")
-        return"https://api.github.com/search/code?q=TODO \(query)"
+        print("\(Defines.serverURL)search/code?q=TODO \(query)")
+        return"\(Defines.serverURL)search/code?q=TODO \(query)"
     }
     
     func requiresAuth() -> Bool? {
