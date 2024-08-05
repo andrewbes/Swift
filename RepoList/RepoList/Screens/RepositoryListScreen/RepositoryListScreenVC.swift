@@ -83,7 +83,7 @@ extension RepositoryListScreenVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.selectedCell(row: indexPath.row) {
             DispatchQueue.main.async {
-                tableView.reloadData()
+                tableView.reloadRows(at: [indexPath], with: .fade)
             }
         }
     }
