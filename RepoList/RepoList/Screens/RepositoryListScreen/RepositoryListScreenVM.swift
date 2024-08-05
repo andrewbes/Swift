@@ -19,6 +19,8 @@ protocol RepositoryListScreenVMType: TableViewModelProtocol {
 
 class RepositoryListScreenVM: RepositoryListScreenVMType {
     
+    let tokenService: TokensService = ServiceHolder.shared.get()
+    let userService: UserService = ServiceHolder.shared.get()
     let todoService: TodoService = ServiceHolder.shared.get()
 
     private let coordinator: RepositoryListScreenCoordType
@@ -87,6 +89,8 @@ extension RepositoryListScreenVM {
 //MARK: Navigation
 extension RepositoryListScreenVM {
     func logout() {
+        tokenService.clearTokens()
+        userService.clearUser()
         coordinator.showLoginScreen()
     }
 }
