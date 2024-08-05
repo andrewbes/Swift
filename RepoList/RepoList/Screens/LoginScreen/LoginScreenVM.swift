@@ -19,8 +19,9 @@ protocol LoginScreenVMDelegate {
 
 class LoginScreenVM: LoginScreenVMType {
 
-    let tokenService = TokensService.shared
-    let todoService = TodoService.shared
+    let tokenService: TokensService = ServiceHolder.shared.get()
+    let userService: UserService = ServiceHolder.shared.get()
+    let todoService: TodoService = ServiceHolder.shared.get()
     
     var delegate:LoginScreenVMDelegate?
     
@@ -51,8 +52,8 @@ class LoginScreenVM: LoginScreenVMType {
     }
     
     func login() {
-        UserService.shared.userName = name
-        TokensService.shared.githubToken = token
+        userService.userName = name
+        tokenService.githubToken = token
         Task {
             let repositories = await todoService.fetchRepositories()
             guard let items = repositories?.items else { return }
@@ -61,8 +62,8 @@ class LoginScreenVM: LoginScreenVMType {
             }
             else {
                 DispatchQueue.main.async {
-                    UserService.shared.userName = self.name
-                    TokensService.shared.githubToken = self.token
+                    self.userService.userName = self.name
+                    self.tokenService.githubToken = self.token
                     self.coordinator.showRepositoriesListScreen(repositories:items)
                 }
             }

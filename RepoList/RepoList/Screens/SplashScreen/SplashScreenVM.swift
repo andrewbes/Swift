@@ -13,6 +13,9 @@ protocol SplashScreenVMType: ViewModelProtocol {
 
 class SplashScreenVM: SplashScreenVMType {
     
+    let userService: UserService = ServiceHolder.shared.get()
+    let todoService: TodoService = ServiceHolder.shared.get()
+    
     private let coordinator: SplashScreenCoordinatorProtocol
     
     init(_ coordinator: SplashScreenCoordinatorProtocol) {
@@ -37,7 +40,7 @@ extension SplashScreenVM {
 extension SplashScreenVM {
     
     func showNextScreen() {
-        if UserService.shared.userName == nil {
+        if userService.userName == nil {
             showLoginScreen()
         }
         else {
@@ -52,7 +55,7 @@ extension SplashScreenVM {
     private func showRepositoryListScreen() {
         
         Task {
-            let repositories = await TodoService.shared.fetchRepositories()
+            let repositories = await todoService.fetchRepositories()
             if let items = repositories?.items, !items.isEmpty {
                 DispatchQueue.main.async {
                     self.coordinator.showRepositoryListScreen(repositories:items)

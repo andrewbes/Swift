@@ -66,6 +66,7 @@ extension AppCoordinator: SplashScreenCoordTransitions, LoginScreenCoordTransiti
     private func configureServicies() {
         ServiceHolder.shared.add(RequestManager.shared, for: RequestManager.self)
         ServiceHolder.shared.add(TokensService.shared, for: TokensService.self)
+        ServiceHolder.shared.add(UserService.shared, for: UserService.self)
         ServiceHolder.shared.add(TodoService.shared, for: TodoService.self)
     }
 }

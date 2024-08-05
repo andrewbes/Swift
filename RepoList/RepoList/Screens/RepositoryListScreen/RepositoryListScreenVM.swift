@@ -18,6 +18,8 @@ protocol RepositoryListScreenVMType: TableViewModelProtocol {
 }
 
 class RepositoryListScreenVM: RepositoryListScreenVMType {
+    
+    let todoService: TodoService = ServiceHolder.shared.get()
 
     private let coordinator: RepositoryListScreenCoordType
     private var repositories: [RepositoryItem]
@@ -61,9 +63,9 @@ extension RepositoryListScreenVM {
     }
     
     func fetchTodos(repo: String) async -> [String]? {
-            let file = await TodoService.shared.searchTodos(in: repo)
+            let file = await todoService.searchTodos(in: repo)
             print("file: \(file)")
-            return await TodoService.shared.fetchFileContent(repo: repo, path: file.first?.path ?? "")
+            return await todoService.fetchFileContent(repo: repo, path: file.first?.path ?? "")
     }
     
     func selectedCell(row: Int, completion: @escaping ()->() ) {
