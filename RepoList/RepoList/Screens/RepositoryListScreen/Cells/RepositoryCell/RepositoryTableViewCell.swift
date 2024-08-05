@@ -19,7 +19,7 @@ class RepositoryTableViewCell: UITableViewCell, BaseCell  {
     
     var viewModel: RepositoryCellModel?
     
-    func configure(with viewModel: any CellsViewModel) {
+    func configure(with viewModel: any BaseCellModelProtocol) {
         self.viewModel = viewModel as? RepositoryCellModel
         if let model = self.viewModel {
             borderView.setBorder(width: 1, color:model.bgColor)

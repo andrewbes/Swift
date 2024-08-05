@@ -25,7 +25,7 @@ class RepositoryListScreenVM: RepositoryListScreenVMType {
 
     private let coordinator: RepositoryListScreenCoordType
     private var repositories: [RepositoryItem]
-    private var cellsModels: [RepositoryCellModel] = []
+    private var cellsModels: [BaseCellModelProtocol] = []
     var repositoriesCount: Int {
         get { repositories.count }
     }
@@ -45,7 +45,7 @@ extension RepositoryListScreenVM {
     
     func initCells() {
         for repo in repositories {
-            let model: RepositoryCellModel = .init(
+            let model: BaseCellModelProtocol = RepositoryCellModel(
                 text: (repositories.isEmpty ? "" : repo.name) ?? "",
                 toDos: nil);
             cellsModels.append(model)
@@ -57,10 +57,10 @@ extension RepositoryListScreenVM {
     }
     
     func heightForRowAt(indexPath: IndexPath) -> CGFloat {
-        cellsModels[indexPath.row].selected ? 200 : 54
+        cellsModels[indexPath.row].getHeight()
     }
     
-    func getCellModel(for section: Int, row: Int) -> BaseCellModel? {
+    func getCellModel(for section: Int, row: Int) -> BaseCellModelProtocol? {
         return cellsModels[row]
     }
     
@@ -72,17 +72,25 @@ extension RepositoryListScreenVM {
     
     func selectedCell(row: Int, completion: @escaping ()->() ) {
         cellsModels[row].swapSelection()
-        if cellsModels[row].selected, cellsModels[row].toDos == nil {
-            Task {
-                if let toDoLines = await fetchTodos(repo: repositories[row].name ?? "") {
-                    cellsModels[row].toDos = toDoLines
+        switch cellsModels[row].cellType {
+            
+        case .repo:
+            guard let model = cellsModels[row] as? RepositoryCellModel else { return }
+            if model.selected, model.toDos == nil {
+                Task {
+                    if let toDoLines = await fetchTodos(repo: repositories[row].name ?? "") {
+                        model.toDos = toDoLines
+                    }
+                    completion()
                 }
+            }
+            else {
                 completion()
             }
+        case .empty:
+            return
         }
-        else {
-            completion()
-        }
+
     }
 }
 

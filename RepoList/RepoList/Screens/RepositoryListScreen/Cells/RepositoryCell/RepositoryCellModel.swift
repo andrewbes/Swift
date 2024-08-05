@@ -23,9 +23,8 @@ class RepositoryCellModel: BaseCellModel {
             return .yellow
         }
     }
-    
-    var selected = false
-    func swapSelection() {
-        selected = !selected
+
+    override func getHeight() -> CGFloat {
+        selected ? 200 : 54
     }
 }

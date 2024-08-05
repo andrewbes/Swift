@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol ModelConfigurableProtocol {
+protocol ModelConfigurableProtocol {
    func configureWith(model: ViewModelProtocol);
 }

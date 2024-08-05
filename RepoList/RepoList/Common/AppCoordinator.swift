@@ -10,7 +10,6 @@ import UIKit
 
 class AppCoordinator {
     private weak var window: UIWindow?
-    // private var toDoListCoordinator:TODOListScreenCoord?
     
     init(window: UIWindow?) {
         self.window = window
@@ -38,7 +37,7 @@ class AppCoordinator {
 
 // MARK: - Private Functions
 extension AppCoordinator: SplashScreenCoordTransitions, LoginScreenCoordTransitions, RepositoryListScreenCoordTransitions{
-
+    
     func showLoginScreen(){
         let coordinator = LoginScreenCoordinator(navigationController: navigationController, transitions: self)
         coordinator.start()
@@ -59,14 +58,13 @@ extension AppCoordinator: SplashScreenCoordTransitions, LoginScreenCoordTransiti
     }
     
     func enterApp(repositories: [RepositoryItem]) {
-        let toDoListCoordinator = RepositoryListScreenCoord(repositories: repositories, navController: navigationController, transitions: self)
-        toDoListCoordinator.start()
+        let coordinator = RepositoryListScreenCoord(repositories: repositories, navController: navigationController, transitions: self)
+        coordinator.start()
     }
     
     private func configureServicies() {
-        ServiceHolder.shared.add(RequestManager.shared, for: RequestManager.self)
-        ServiceHolder.shared.add(TokensService.shared, for: TokensService.self)
-        ServiceHolder.shared.add(UserService.shared, for: UserService.self)
-        ServiceHolder.shared.add(TodoService.shared, for: TodoService.self)
+        ServiceHolder.shared.add(TokensService(), for: TokensService.self)
+        ServiceHolder.shared.add(UserService(), for: UserService.self)
+        ServiceHolder.shared.add(TodoService(), for: TodoService.self)
     }
 }

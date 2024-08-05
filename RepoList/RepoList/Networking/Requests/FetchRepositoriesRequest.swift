@@ -13,8 +13,10 @@ class FetchRepositoriesRequest: RequestProtocol {
     
     private let username: String
     
+    let userService: UserService = ServiceHolder.shared.get()
+    
     init() {
-        self.username = UserService.shared.userName ?? ""
+        self.username = userService.userName ?? ""
     }
     
     func method() -> HTTPMethod {

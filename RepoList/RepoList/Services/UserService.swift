@@ -9,7 +9,7 @@ import Foundation
 
 class UserService: StoredService {
     
-    static var shared: UserService = UserService()
+//    static var shared: UserService = UserService()
 
     var userName: String? {
         get { return UserDefaultsProvider.userName }

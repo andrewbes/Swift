@@ -9,7 +9,7 @@ import Foundation
 
 class TokensService: StoredService {
     
-    static var shared: TokensService = TokensService()
+//    static var shared: TokensService = TokensService()
 
     var githubToken: String? {
         get { return KeychainProvider.githubToken }

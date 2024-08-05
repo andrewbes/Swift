@@ -10,7 +10,7 @@ import Foundation
 
 class TodoService: StoredService {
     
-    static var shared: TodoService = TodoService()
+//     static var shared: TodoService = TodoService()
     
     func fetchRepositories() async -> RepositoryResponseModel?{
         let request = FetchRepositoriesRequest()

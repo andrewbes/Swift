@@ -12,11 +12,12 @@ import Alamofire
 class SearchTodosRequest: RequestProtocol {
     
     private let username: String
-
     private let repo: String
     
+    let userService: UserService = ServiceHolder.shared.get()
+    
     init(repo: String) {
-        self.username = UserService.shared.userName ?? ""
+        self.username = userService.userName ?? ""
         self.repo = repo
     }
     

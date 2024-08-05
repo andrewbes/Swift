@@ -6,10 +6,10 @@
 //
 
 import Foundation
-public protocol ViewModelProtocol {
+protocol ViewModelProtocol {
     func getCaption() -> String
 }
 
-public protocol TableViewModelProtocol: ViewModelProtocol {
-    func getCellModel(for section: Int, row: Int)-> BaseCellModel?
+protocol TableViewModelProtocol: ViewModelProtocol {
+    func getCellModel(for section: Int, row: Int)-> BaseCellModelProtocol?
 }

@@ -7,14 +7,12 @@
 
 import Foundation
 
-//MARK::defines
 struct Defines {
     
     static let serverURL = "https://api.github.com/"
     
 }
 
-//MARK::platform
 struct Platform {
     
     static var isSimulator: Bool {

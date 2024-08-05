@@ -15,8 +15,10 @@ class FetchFileContentRequest: RequestProtocol {
     private let repo: String
     private let path: String
     
+    let userService: UserService = ServiceHolder.shared.get()
+    
     init(repo: String, path: String) {
-        self.username = UserService.shared.userName ?? ""
+        self.username = userService.userName ?? ""
         self.repo = repo
         self.path = path
     }

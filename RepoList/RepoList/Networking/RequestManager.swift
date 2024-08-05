@@ -9,8 +9,9 @@ import Foundation
 import Alamofire
 
 class RequestManager : StoredService {
+
     static let shared = RequestManager()
-    //let userService: UserService = ServiceHolder.shared.get()
+    let tokenService: TokensService = ServiceHolder.shared.get()
     
     //weak var delegate: RequestManagerDelegate?
     
@@ -121,7 +122,7 @@ class RequestManager : StoredService {
     private func prepareHeaders(for requestItem: RequestProtocol) -> HTTPHeaders {
         var headers = requestItem.headers() ?? [:]
         
-        if requestItem.requiresAuth() ?? false, let token = TokensService.shared.githubToken {
+        if requestItem.requiresAuth() ?? false, let token = tokenService.githubToken {
             headers["Authorization"] = "token \(token)"
         }
         

@@ -8,8 +8,12 @@
 
 import UIKit
 
-protocol CellsViewModel {
+    protocol BaseCellModelProtocol {
     var visible: Bool { get set }
+    var selected: Bool { get set }
+    var cellType: CellType { get set }
+    func swapSelection()
+    func getHeight() -> CGFloat
 }
 
 enum SectionState {
@@ -18,7 +22,7 @@ enum SectionState {
 }
 
 protocol BaseCell : UITableViewCell {
-    func configure(with viewModel: CellsViewModel)
+    func configure(with viewModel: BaseCellModelProtocol)
 }
 
 enum CellType: Equatable, Hashable {
@@ -35,11 +39,21 @@ enum CellType: Equatable, Hashable {
     }
 }
 
-public class BaseCellModel: CellsViewModel {
+public class BaseCellModel: BaseCellModelProtocol {
     var visible: Bool = false
+    var selected = false
     var cellType: CellType = .empty
+    
     init(visible: Bool, cellType: CellType) {
         self.visible = visible
         self.cellType = cellType
+    }
+
+    func swapSelection() {
+        selected = !selected
+    }
+    
+    func getHeight() -> CGFloat {
+        0.0
     }
 }
